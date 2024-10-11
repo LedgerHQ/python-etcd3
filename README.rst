@@ -30,6 +30,16 @@ If you're interested in using this library, please get involved.
 * Free software: Apache Software License 2.0
 * Documentation: https://python-etcd3.readthedocs.io.
 
+Generate proto stubs:
+
+.. code-block:: bash
+    python -m grpc_tools.protoc -Ietcd3/proto --python_out=etcd3/etcdrpc --grpc_python_out=etcd3/etcdrpc etcd3/proto/rpc.proto
+    python -m grpc_tools.protoc -Ietcd3/proto --python_out=etcd3/etcdrpc etcd3/proto/kv.proto
+    python -m grpc_tools.protoc -Ietcd3/proto --python_out=etcd3/etcdrpc etcd3/proto/auth.proto
+    # Then manually edit import path of rpc stubs
+    # See: commit eea9880b0c4c2227d2374018eb6c56167526ed6b "chore: manually fix the stubs"
+
+
 Basic usage:
 
 .. code-block:: python
