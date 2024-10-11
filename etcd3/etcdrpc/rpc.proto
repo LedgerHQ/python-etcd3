@@ -16,10 +16,10 @@
 
 syntax = "proto3";
 
-import "kv.proto";
-import "auth.proto";
+import "etcd3/etcdrpc/kv.proto";
+import "etcd3/etcdrpc/auth.proto";
 
-package etcdserverpb;
+package etcd3.etcdrpc.rpc;
 
 option java_multiple_files = true;
 option java_package = "io.etcd.jetcd.api";
@@ -261,7 +261,7 @@ message RangeResponse {
   ResponseHeader header = 1;
   // kvs is the list of key-value pairs matched by the range request.
   // kvs is empty when count is requested.
-  repeated mvccpb.KeyValue kvs = 2;
+  repeated etcd3.etcdrpc.kv.KeyValue kvs = 2;
   // more indicates if there are more keys to return in the requested range.
   bool more = 3;
   // count is set to the number of keys within the range when requested.
@@ -293,7 +293,7 @@ message PutRequest {
 message PutResponse {
   ResponseHeader header = 1;
   // if prev_kv is set in the request, the previous key-value pair will be returned.
-  mvccpb.KeyValue prev_kv = 2;
+  etcd3.etcdrpc.kv.KeyValue prev_kv = 2;
 }
 
 message DeleteRangeRequest {
@@ -316,7 +316,7 @@ message DeleteRangeResponse {
   // deleted is the number of keys deleted by the delete range request.
   int64 deleted = 2;
   // if prev_kv is set in the request, the previous key-value pairs will be returned.
-  repeated mvccpb.KeyValue prev_kvs = 3;
+  repeated etcd3.etcdrpc.kv.KeyValue prev_kvs = 3;
 }
 
 message RequestOp {
@@ -543,7 +543,7 @@ message WatchResponse {
   // cancel_reason indicates the reason for canceling the watcher.
   string cancel_reason = 6;
 
-  repeated mvccpb.Event events = 11;
+  repeated etcd3.etcdrpc.kv.Event events = 11;
 }
 
 message LeaseGrantRequest {
@@ -795,7 +795,7 @@ message AuthRoleGrantPermissionRequest {
   // name is the name of the role which will be granted the permission.
   string name = 1;
   // perm is the permission to grant to the role.
-  authpb.Permission perm = 2;
+  etcd3.etcdrpc.auth.Permission perm = 2;
 }
 
 message AuthRoleRevokePermissionRequest {
@@ -851,7 +851,7 @@ message AuthRoleAddResponse {
 message AuthRoleGetResponse {
   ResponseHeader header = 1;
 
-  repeated authpb.Permission perm = 2;
+  repeated etcd3.etcdrpc.auth.Permission perm = 2;
 }
 
 message AuthRoleListResponse {
