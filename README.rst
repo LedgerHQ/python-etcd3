@@ -30,6 +30,13 @@ If you're interested in using this library, please get involved.
 * Free software: Apache Software License 2.0
 * Documentation: https://python-etcd3.readthedocs.io.
 
+Generate proto stubs:
+
+.. code-block:: bash
+    python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. etcd3/etcdrpc/rpc.proto
+    python -m grpc_tools.protoc -I. --python_out=. etcd3/etcdrpc/kv.proto
+    python -m grpc_tools.protoc -I. --python_out=. etcd3/etcdrpc/auth.proto
+
 Basic usage:
 
 .. code-block:: python
