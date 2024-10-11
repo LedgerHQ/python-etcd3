@@ -40,6 +40,14 @@ Generate proto stubs:
     # See: commit eea9880b0c4c2227d2374018eb6c56167526ed6b "chore: manually fix the stubs"
 
 
+Generate requirements:
+
+.. code-block:: bash
+    cd requirements
+    pip-compile --output-file=base.txt base.in
+    pip-compile --output-file=test.txt test.in
+
+
 Basic usage:
 
 .. code-block:: python
