@@ -1,1 +1,2 @@
+protobuf>=5.28.2,<6 # 5.27.2 is skip because of https://github.com/protocolbuffers/protobuf/issues/18096
 grpcio>=1.66.2
