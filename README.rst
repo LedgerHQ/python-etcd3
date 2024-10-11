@@ -37,6 +37,14 @@ Generate proto stubs:
     python -m grpc_tools.protoc -I. --python_out=. etcd3/etcdrpc/kv.proto
     python -m grpc_tools.protoc -I. --python_out=. etcd3/etcdrpc/auth.proto
 
+Generate requirements:
+
+.. code-block:: bash
+    cd requirements
+    pip-compile --output-file=base.txt base.in
+    pip-compile --output-file=test.txt test.in
+
+
 Basic usage:
 
 .. code-block:: python
