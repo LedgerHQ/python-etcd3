@@ -6,3 +6,5 @@
 #
 grpcio==1.66.2
     # via -r base.in
+protobuf==5.29.1
+    # via -r base.in
