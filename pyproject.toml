@@ -14,7 +14,7 @@ authors = [
   {email = "Ledger SAS <team-embedded-software+enclave@ledger.fr>"},
 ]
 dependencies = [
-    "grpcio==1.66.2",
+    "grpcio>=1.68.1",
     "protobuf>=5.27.1,<6",
     "six==1.16.0",
 ]
@@ -78,6 +78,3 @@ skips = ["tests/*.py"]
 convention = "pep257"
 
 [tool.setuptools_scm]
-
-[tool.pytest.ini_options]
-asyncio_default_fixture_loop_scope = "function"

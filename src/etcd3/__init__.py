@@ -10,7 +10,7 @@ from etcd3.leases import Lease
 from etcd3.locks import Lock
 from etcd3.members import Member
 
-__version__ = metadata.version("protect-device")
+__version__ = metadata.version("etcd3")
 __author__ = "Louis Taylor"
 __email__ = "louis@kragniz.eu"
 
