@@ -24,11 +24,17 @@ jobs:
   test:
     runs-on: ubuntu-latest
     needs: build
+    strategy:
+      matrix:
+        pyversion:
+          - '3.6'
+          - '3.10'
+          - '3.12'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5.4.0
         with:
-          python-version: '3.10'
+          python-version: ${{ matrix.pyversion }}
       - run: |
           pip install tox
       - name: Run unittests
