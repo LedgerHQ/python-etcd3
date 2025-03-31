@@ -7,7 +7,7 @@ on:
 
 jobs:
   publish:
-    runs-on: ledgerhq-shared-small
+    runs-on: public-ledgerhq-shared-small
     permissions:
       id-token: write
       contents: read
@@ -44,7 +44,7 @@ jobs:
           retention-days: 2
 
   validate:
-    runs-on: ledgerhq-shared-small
+    runs-on: public-ledgerhq-shared-small
     permissions:
       id-token: write
       contents: read
