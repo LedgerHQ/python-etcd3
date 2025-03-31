@@ -19,7 +19,9 @@ jobs:
       - run: |
           pip install tox
       - name: Run linters
-        run: tox -e build || true
+        run: |
+          tox -e genproto
+          tox -e build || true
 
   test:
     runs-on: ubuntu-latest
@@ -38,7 +40,9 @@ jobs:
       - run: |
           pip install tox
       - name: Run unittests
-        run: tox -e unittests
+        run: |
+          tox -e genproto
+          tox -e unittests
 
   lint:
     runs-on: ubuntu-latest
@@ -51,7 +55,9 @@ jobs:
       - run: |
           pip install tox
       - name: Run linters
-        run: tox -e lint || true
+        run: |
+          tox -e genproto
+          tox -e lint || true
 
   doc:
     runs-on: ubuntu-latest
@@ -64,4 +70,6 @@ jobs:
       - run: |
           pip install tox
       - name: Run linters
-        run: tox -e doc
+        run: |
+          tox -e genproto
+          tox -e doc

@@ -19,6 +19,7 @@ jobs:
           python-version: '3.10'
       - run: |
           pip install tox
+          tox -e genproto
           tox -e build
       # initiate jfrog login and install jf
       - name: Login to JFrog Ledger
