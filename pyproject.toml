@@ -8,7 +8,6 @@ description = "Python client for the etcd3 API"
 dynamic = ["version"]
 requires-python = ">=3.7"
 readme = "README.rst"
-license = {file = "LICENSE"}
 authors = [
   {email = "Louis Taylor <louis@kragniz.eu>"},
   {email = "Ledger SAS <team-embedded-software+enclave@ledger.fr>"},
@@ -21,7 +20,6 @@ dependencies = [
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: Apache Software License",
     "Natural Language :: English",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3 :: Only",
