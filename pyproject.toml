@@ -52,6 +52,7 @@ tests = [
 ]
 protoc = [
     "grpcio-tools",
+    "grpcio==1.68.1",
 ]
 doc = [
     "Sphinx>=1.8.2",
