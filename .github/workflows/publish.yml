@@ -34,9 +34,6 @@ jobs:
         with:
           subject-path: 'dist/*.tar.gz'
           push-to-registry: false
-      - uses: LedgerHQ/actions/gemfury/publish@main
-        env:
-          PUSH_TOKEN: ${{ secrets.PYPI_PUSH_TOKEN }}
       - uses: actions/upload-artifact@v4
         with:
           name: dist-${{ github.run_id }}
